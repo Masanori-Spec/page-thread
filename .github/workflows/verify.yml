@@ -1,0 +1,85 @@
+name: Verify PageThread
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      matrix:
+        node: [22, 24]
+        timezone: [UTC, Asia/Tokyo]
+    env:
+      TZ: ${{ matrix.timezone }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+  browser:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Sandboxed Chromium workflow
+        run: |
+          npm run serve > /tmp/pagethread-server.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:4179/ > /dev/null && break; sleep 1; done
+          npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pagethread-browser-evidence
+          path: tests/browser/artifacts/
+  epubcheck:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Fetch the pinned official EPUBCheck release
+        run: |
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/epubcheck.zip" https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip
+          echo "33350c61038e71dfb3d45a76aed04bf5481e6d5500cb780f6e98db8bbd15a28c  $RUNNER_TEMP/epubcheck.zip" | sha256sum --check
+          unzip -q "$RUNNER_TEMP/epubcheck.zip" -d "$RUNNER_TEMP/epubcheck"
+      - run: node scripts/fixture-output.mjs
+      - run: npm run test:epubcheck
+        env:
+          EPUBCHECK_JAR: ${{ runner.temp }}/epubcheck/epubcheck-5.4.0/epubcheck.jar
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pagethread-epubcheck-evidence
+          path: docs/epubcheck-evidence/
