@@ -1,0 +1,8 @@
+import {readFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+const hash=b=>createHash('sha256').update(b).digest('hex'),base='docs/epubcheck-evidence/';
+const evidence=JSON.parse(await readFile(base+'results.json','utf8'));assert.equal(evidence.status,'passed');assert.equal(evidence.results.length,2);
+assert.equal(evidence.releaseArchiveSha256,'33350c61038e71dfb3d45a76aed04bf5481e6d5500cb780f6e98db8bbd15a28c');
+for(const item of evidence.results){assert.equal(item.sha256,hash(await readFile(item.fixture)));const bytes=await readFile(base+item.report);assert.equal(item.reportSha256,hash(bytes));const report=JSON.parse(new TextDecoder().decode(bytes));assert.equal(report.checker.checkerVersion,'5.4.0');for(const key of ['nFatal','nError','nWarning'])assert.equal(report.checker[key],0);}
+console.log('Retained official EPUBCheck reports match the exact current fixture/output bytes');
+const orderBase=base+'order-permutation/',order=JSON.parse(await readFile(orderBase+'results.json','utf8'));assert.equal(order.status,'passed');for(const item of order.files){assert.equal(hash(await readFile(orderBase+item.epub)),item.epubSha256);const bytes=await readFile(orderBase+item.report);assert.equal(hash(bytes),item.reportSha256);const report=JSON.parse(new TextDecoder().decode(bytes));assert.equal(report.checker.checkerVersion,'5.4.0');for(const key of ['nFatal','nError','nWarning'])assert.equal(report.checker[key],0);}
+console.log('Central-directory permutation source/output also retain exact passing official validator evidence');

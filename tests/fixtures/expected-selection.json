@@ -1,0 +1,135 @@
+{
+  "paginationSource": "PageThread Field Notes, synthetic editorial edition, 2026; page labels supplied for demonstration",
+  "modifiedAfter": "2026-10-04T00:00:00Z",
+  "boundaries": [
+    {
+      "decisionId": "prelim",
+      "label": "iv",
+      "phrase": "Field notes begin",
+      "sourcePart": "EPUB/text/zz-preface.xhtml",
+      "spineIdref": "intro",
+      "sourcePath": [
+        1,
+        1
+      ],
+      "textNodeIndex": 0,
+      "offset": 0,
+      "markerId": "pt-page-0001",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "trail",
+      "label": "1",
+      "phrase": "quiet attention and a deliberate",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        1,
+        0
+      ],
+      "textNodeIndex": 0,
+      "offset": 0,
+      "markerId": "pt-page-0002",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "repeat",
+      "label": "2",
+      "phrase": "A shared beginning",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        2
+      ],
+      "textNodeIndex": 0,
+      "offset": 31,
+      "markerId": "pt-page-0003",
+      "candidateCount": 4,
+      "selectedOccurrence": 3
+    },
+    {
+      "decisionId": "entity",
+      "label": "3",
+      "phrase": "ampersand & a bold step",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        3
+      ],
+      "textNodeIndex": 0,
+      "offset": 3,
+      "markerId": "pt-page-0004",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "unicode",
+      "label": "4",
+      "phrase": "and café",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        4
+      ],
+      "textNodeIndex": 0,
+      "offset": 8,
+      "markerId": "pt-page-0005",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "spaces",
+      "label": "5",
+      "phrase": "Nonbreaking space",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        5
+      ],
+      "textNodeIndex": 0,
+      "offset": 0,
+      "markerId": "pt-page-0006",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "japanese",
+      "label": "6",
+      "phrase": "風が水面をゆっくり",
+      "sourcePart": "EPUB/text/aa-river.xhtml",
+      "spineIdref": "river",
+      "sourcePath": [
+        1,
+        1
+      ],
+      "textNodeIndex": 0,
+      "offset": 7,
+      "markerId": "pt-page-0007",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "closing",
+      "label": "A-1",
+      "phrase": "words stay in place",
+      "sourcePart": "EPUB/text/aa-river.xhtml",
+      "spineIdref": "river",
+      "sourcePath": [
+        1,
+        3
+      ],
+      "textNodeIndex": 1,
+      "offset": 0,
+      "markerId": "pt-page-0008",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    }
+  ]
+}

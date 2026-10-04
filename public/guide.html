@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A bilingual editorial guide to PageThread’s explicit page-boundary workflow, supported EPUB profile, local processing and verifiable exports.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>PageThread · Guide / 使い方</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#guide-content">本文へ / Skip to guide</a>
+  <header class="topbar"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i><i></i></span>PageThread<span class="version">0.1.0</span></a><a href="./" class="guide-back">← 編集画面 / Workbench</a></header>
+  <main class="guide-main" id="guide-content" tabindex="-1">
+    <section class="guide-hero"><p class="eyebrow">THE EDITOR’S GUIDE</p><h1>ページの場所を、<br>ひとつずつ確かめる。</h1><p lang="en">A practical guide to connecting verified print page boundaries with exact locations in an EPUB.</p></section>
+    <nav class="guide-nav" aria-label="Guide sections"><a href="#workflow">手順 / Workflow</a><a href="#matching">検索 / Matching</a><a href="#files">書き出し / Exports</a><a href="#scope">対応範囲 / Scope</a><a href="#privacy">プライバシー / Privacy</a></nav>
+
+    <section class="guide-section" id="workflow"><p class="guide-caption">01 / THE WORKFLOW</p><h2>紙版を手元に、原本からはじめる<br><span lang="en">Start with the edition and the original</span></h2><div class="guide-twin"><div lang="ja">
+      <ol>
+        <li><strong>編集用EPUBを開く。</strong>「EPUBを選択」から、ページ情報がまだ入っていない原本を選びます。タイトル、本文項目数、対応・非対応のブロック数を確認してください。「サンプルを試す」でも流れを確認できます。</li>
+        <li><strong>紙版の情報とページ境界を記録する。</strong>ISBNや版・発行年など、出典を特定できる情報を入力します。紙版で確認したページラベルと、そのページ先頭の引用句をTSVで貼り付けます。記録の行順は本文の読み順にしてください。</li>
+        <li><strong>引用句を検索し、候補を選ぶ。</strong>すべての記録で位置を明示的に選びます。候補がひとつでも自動選択はしません。同じ引用句が複数ある場合は前後の文脈と章を確認します。候補がなければ、引用句を修正してください。</li>
+        <li><strong>本文の順序で確認する。</strong>出典、ページラベル、章、選択箇所を見直します。前後が逆の位置や、同じ位置の重複は拒否されます。表示はテキストの確認一覧で、EPUBのレンダリングではありません。</li>
+        <li><strong>4種類のファイルを生成して保存する。</strong>EPUB・マッピング・変更記録・HTMLレポートを、それぞれダウンロードします。原本も保管してください。</li>
+      </ol>
+      <p class="guide-note">サンプルには重複する引用句、通常のインライン要素、日本語、Unicodeや空白の違いが含まれます。「サンプルの指定位置を選ぶ」は、その原本のSHA-256が一致する場合だけ利用できます。</p>
+    </div><div lang="en">
+      <ol>
+        <li><strong>Open the editorial EPUB.</strong> Choose the original before page information has been inserted. Check its title, spine items, supported blocks and unsupported blocks. You can also start with the built-in sample.</li>
+        <li><strong>Record the edition and boundaries.</strong> Enter an ISBN or bibliographic description of the print edition. Paste the editor-verified page labels and quotations as TSV, in reading order.</li>
+        <li><strong>Find matches and choose each location.</strong> No location is chosen automatically, even when there is one match. Repeated quotations require a check of the chapter and surrounding text. Revise quotations that have no matches.</li>
+        <li><strong>Review the reading order.</strong> Check the source, page labels, chapters and selected text. Reversed or duplicate locations are rejected. This is a text review, not an EPUB rendering.</li>
+        <li><strong>Generate and save four files.</strong> Download the EPUB, mapping, receipt and readable HTML report individually. Keep the original as well.</li>
+      </ol>
+      <p class="guide-note">The sample includes repeated quotations, ordinary inline markup, Japanese text, and Unicode and whitespace distinctions. Its selection shortcut is available only when the original SHA-256 matches exactly.</p>
+    </div></div>
+    <div class="guide-twin"><div lang="ja"><h3>入力例</h3><p>以下の「→」を実際のTabに置き換えて貼り付けます。入力欄のTabキーは次の操作へ移動します。空行は無視されます。</p><div class="guide-sample">iv → Field notes begin
+1 → quiet attention and a deliberate
+2 → A shared beginning</div><p>ラベルは数字でなくても構いません。例：iv、12、A-1。最大500件、ラベル64文字、引用句256文字、出典512文字です。文字数はUnicodeコードポイントで数えます。</p></div><div lang="en"><h3>Input example</h3><p>Replace each arrow below with an actual tab before pasting. The Tab key in the field moves to the next control. Empty lines are ignored.</p><div class="guide-sample">iv → Field notes begin
+1 → quiet attention and a deliberate
+2 → A shared beginning</div><p>Labels can include roman numerals or appendix labels, such as iv, 12 or A-1. Limits: 500 boundaries, 64 characters per label, 256 per quotation and 512 for the source. Character limits use Unicode code points.</p></div></div>
+    </section>
+
+    <section class="guide-section" id="matching"><p class="guide-caption">02 / EXACT MATCHING</p><h2>似た言葉と、同じ文字を区別する<br><span lang="en">Similar-looking is not always identical</span></h2><div class="guide-twin"><div lang="ja"><p>大文字・小文字は区別します。XMLの空白文字、つまり半角スペース・Tab・CR・LFの連続部分だけを半角スペースひとつにし、前後のXML空白を取り除きます。NBSP、全角スペース、句読点、アクセント記号、Unicodeの合成形式は変更しません。</p><p>対応するp・h1〜h6・liの内部で、通常のインライン要素をまたぐ一致は検索できます。ブロック間やbrをまたぐ検索は行いません。非対応要素を含むブロックは候補から除外します。</p><p>引用句が同じでも、どの出現箇所かは別の判断です。選択位置は本文ファイル、要素パス、テキストノード、文字オフセットと原本のハッシュで記録します。</p><p class="guide-note">検索するのはソース本文です。CSSのレイアウトや表示・非表示は評価しません。原本のマークアップはテキストとして扱い、この画面では実行・表示しません。</p></div><div lang="en"><p>Matching is case-sensitive. Only XML whitespace runs, meaning ordinary spaces, tabs, CR and LF, collapse to one ordinary space; leading and trailing XML whitespace is removed. NBSP, ideographic spaces, punctuation, accent characters and Unicode normalization remain unchanged.</p><p>A quotation can cross ordinary inline elements inside a supported p, h1–h6 or li block. It cannot cross blocks or br elements. Blocks containing unsupported structures are excluded from candidates.</p><p>Identical wording can still refer to different occurrences. Each choice is bound to the content document, element path, text node, character offset and original file hashes.</p><p class="guide-note">Search operates on source text. CSS layout and visibility are not evaluated. Imported markup is handled as text and is never executed or rendered in this interface.</p></div></div>
+    </section>
+
+    <section class="guide-section" id="files"><p class="guide-caption">03 / FOUR COMPLEMENTARY FILES</p><h2>成果物と、その判断の記録<br><span lang="en">The result and the decisions behind it</span></h2><div class="guide-twin"><div lang="ja"><ul>
+      <li><strong>EPUB：</strong>選択位置にページ境界を挿入し、ページ一覧と出典メタデータを追加した本です。</li>
+      <li><strong>マッピングJSON：</strong>原本のSHA-256、出典、出力更新日時、ページラベル、引用句、選択位置を保存します。同じ原本へ再適用するためのファイルです。</li>
+      <li><strong>変更記録JSON：</strong>出力ハッシュ、変更したファイル、選択位置、変更していないファイルのハッシュなどを記録します。</li>
+      <li><strong>HTMLレポート：</strong>ブラウザ単体で読める日英の確認資料です。編集判断と技術上の検証範囲を確認できます。</li>
+    </ul><p>「保存したマッピングを読込」は、開いている原本とハッシュが一致する場合にだけ使えます。選択位置は再検索・再検証されます。原本を編集した場合や、既にページ情報を挿入したEPUBには再適用できません。</p><p>「再現性の設定」で出力更新日時を固定できます。有効なUTC日時を秒単位で入力し、原本の更新日時以降にしてください。例：2026-10-04T09:00:00Z。</p></div><div lang="en"><ul>
+      <li><strong>EPUB:</strong> The publication with page boundaries at the selected locations, a page list and pagination-source metadata.</li>
+      <li><strong>Mapping JSON:</strong> The original SHA-256, source, output modification time, labels, quotations and selected locations. Use it to repeat the operation on the exact original.</li>
+      <li><strong>Receipt JSON:</strong> Output hash, modified documents, chosen locations and hashes of unchanged documents.</li>
+      <li><strong>HTML report:</strong> A standalone bilingual review document that opens in a browser and explains the editorial choices and verification limits.</li>
+    </ul><p>Load a saved mapping only with the exact original EPUB. Every location is searched and validated again. A changed original, or the already-paginated output, cannot be used in its place.</p><p>Reproducibility settings let you fix the output modification time. It must be a valid whole-second UTC time at or after the original modification time, for example 2026-10-04T09:00:00Z.</p></div></div>
+    </section>
+
+    <section class="guide-section" id="scope"><p class="guide-caption">04 / THE SUPPORTED PROFILE</p><h2>編集者の確認を、置き換えない<br><span lang="en">The editor remains the source of truth</span></h2><div class="guide-twin"><div lang="ja"><p>対象は、既存のページ情報を含まないリフロー型EPUB 3です。対応する本文要素はp・h1〜h6・liと通常のインライン要素です。暗号化・署名・固定レイアウト・スクリプト・メディアオーバーレイは対応しません。既存のページマーカーやページ一覧は拒否し、置換しません。</p><p>ruby・MathML・SVG・hidden・CDATA・非対応ブロック構造などを含む対象ブロックは候補から外し、非対応として数えます。本文の内訳を確認して、検索の対象になっていない箇所に注意してください。</p><p>上限は入力25 MiB、展開後合計100 MiB、本文200項目です。安全に処理できる範囲を保つため、XMLの構造や検索量にも上限があります。1件あたり200候補、全体で5,000候補を超える検索は拒否されます。引用句をより具体的にすると候補を絞れます。</p><p>EPUB 3.3と現行W3Cのページ出典ガイダンスを対象にしています。EPUB 3.4は草案で、最終版への適合を主張しません。pageBreakSource・pageBreakMarkers・pageNavigationメタデータを追加しても、本全体のアクセシビリティを保証するものではありません。</p><p class="guide-note">紙版の境界の正しさ、全リーダーの挙動、規格適合性はアプリ内では検証できません。EPUBCheck 5.4でのサンプル検査は別途行います。実際の成果物を独立した検証ツールと対象リーダーで確認してください。</p></div><div lang="en"><p>The supported profile is reflowable EPUB 3 without existing page information. Supported text blocks are p, h1–h6 and li with ordinary inline content. Encrypted, signed, fixed-layout, scripted and media-overlay publications are excluded. Existing page markers and page lists are rejected, never replaced.</p><p>Relevant blocks containing ruby, MathML, SVG, hidden content, CDATA or unsupported structures are excluded and counted as unsupported. Inspect chapter coverage to understand which text is not being searched.</p><p>Limits are 25 MiB input, 100 MiB total expanded content and 200 spine items. XML complexity and search work also have bounded budgets. Searches exceeding 200 candidates per boundary or 5,000 total candidates are rejected. More distinctive quotations can reduce matches.</p><p>The profile targets EPUB 3.3 and current W3C pagination-source guidance. EPUB 3.4 is a draft; final 3.4 conformance is not claimed. Adding pageBreakSource, pageBreakMarkers and pageNavigation metadata does not establish overall accessibility.</p><p class="guide-note">The app cannot verify print boundary correctness, all reading systems or conformance. EPUBCheck 5.4 fixture checks are separate. Validate actual output independently and inspect it in the readers you target.</p></div></div>
+    </section>
+
+    <section class="guide-section" id="privacy"><p class="guide-caption">05 / LOCAL, TEMPORARY, EXPLICIT</p><h2>ファイルはこのタブの中だけに<br><span lang="en">Your files stay in this tab</span></h2><div class="guide-twin"><div lang="ja"><p>ファイル、引用句、マッピングはネットワーク送信しません。Cookie、localStorage、IndexedDBに保存しません。外部フォント・外部アセット・分析ツールも使いません。タブを閉じると作業は失われるので、必要な成果物を先にダウンロードしてください。</p><p>処理中は「処理をキャンセル」で停止できます。現在の有効な作業は残ります。別のEPUBを選ぶと新しい検査を開始し、成功後に置き換えます。「すべてクリア」は現在の作業を破棄します。遅れて届いた以前の処理結果で、内容が戻ることはありません。</p><p>キーボードでも操作できます。Tabで移動し、候補のラジオボタンは矢印キーで選択します。画面先頭に作業へ移動するリンクがあります。日本語・英語は作業内容を保ったまま切り替えられます。</p></div><div lang="en"><p>Files, quotations and mappings are never sent over the network. No cookies, localStorage or IndexedDB. No external fonts, external assets or analytics. Closing the tab discards the workspace, so download the files you need first.</p><p>Cancel processing to stop a running operation while preserving the current valid workspace. Choosing another EPUB starts a new inspection and replaces the current book only after success. Clear workspace discards the current work. Late results from older operations cannot restore stale state.</p><p>Keyboard navigation is supported. Use Tab to move between controls and arrow keys to select candidate radio buttons. A skip link leads to the workspace. Switching between Japanese and English preserves your work.</p></div></div>
+    </section>
+    <footer><a href="./">← PageThread workbench / 編集画面へ</a><span>LOCAL EDITORIAL WORKBENCH / v0.1.0</span></footer>
+  </main>
+</body>
+</html>

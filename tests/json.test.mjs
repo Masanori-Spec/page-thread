@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {parseJSON} from '../src/json.mjs';
+test('saved JSON rejects duplicate decoded keys at every nesting level',()=>{for(const text of ['{"a":1,"a":2}','{"a":1,"\\u0061":2}','{"rows":[{"label":"1","label":"2"}]}'])assert.throws(()=>parseJSON(text),e=>e.code==='mapping-json-duplicate');});
+test('saved JSON permits literal braces/escapes and keeps exact field strings',()=>{const original={label:' x\ty\r\n ',phrase:'quoted " braces { } and \\ path',values:[true,false,null,-2.5e3]};assert.deepEqual(parseJSON(JSON.stringify(original)),original);});
+test('saved JSON fails malformed syntax and excessive depth with bounded codes',()=>{for(const text of ['{"a":1,}','[1,]','01','true trailing','"bad\nstring"','['])assert.throws(()=>parseJSON(text),e=>e.code==='mapping-json');assert.throws(()=>parseJSON('['.repeat(70)+'0'+']'.repeat(70)),e=>e.code==='mapping-json-limit');});

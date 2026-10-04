@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "officialRelease": "https://github.com/w3c/epubcheck/releases/tag/v5.4.0",
+  "releaseArchiveSha256": "33350c61038e71dfb3d45a76aed04bf5481e6d5500cb780f6e98db8bbd15a28c",
+  "jarSha256": "2146665a124998dc6c908010ffe0d09dc4f4c8014f2c8fd6a1aa11f64c40ac93",
+  "scope": "EPUBCheck 5.4.0 validates the current EPUB 3.4 Candidate Recommendation profile. This is not a claim of a final 3.4 standard, universal reader behavior, editorial boundary correctness or overall accessibility.",
+  "results": [
+    {
+      "fixture": "tests/fixtures/field-notes.epub",
+      "sha256": "8600894b09e9da1c0bf671ba42b37b4f6e565e15fa435b9ab0dbd1e3fc507d27",
+      "report": "source.json",
+      "reportSha256": "ca9d37b185a95070bd9d6077ece2981fe1f590a1e9d7fc501e675a346b22127b",
+      "checkerVersion": "5.4.0",
+      "validatorPublicationVersion": "3.4",
+      "fatal": 0,
+      "error": 0,
+      "warning": 0,
+      "usage": 0
+    },
+    {
+      "fixture": "tests/generated/paginated.epub",
+      "sha256": "fc3599f09ce46cf4116bed104914c50b6516a29fb6f5d962937d36f4e27c4e26",
+      "report": "output.json",
+      "reportSha256": "7e3f3b11867b1197acd9b96c6c41b930f04e92f8627531b7ffc19a81fb221eb7",
+      "checkerVersion": "5.4.0",
+      "validatorPublicationVersion": "3.4",
+      "fatal": 0,
+      "error": 0,
+      "warning": 0,
+      "usage": 0
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "decisionId": "prelim",
+    "label": "iv",
+    "phrase": "Field notes begin"
+  },
+  {
+    "decisionId": "trail",
+    "label": "1",
+    "phrase": "quiet attention and a deliberate"
+  },
+  {
+    "decisionId": "repeat",
+    "label": "2",
+    "phrase": "A shared beginning"
+  },
+  {
+    "decisionId": "entity",
+    "label": "3",
+    "phrase": "ampersand & a bold step"
+  },
+  {
+    "decisionId": "unicode",
+    "label": "4",
+    "phrase": "and café"
+  },
+  {
+    "decisionId": "spaces",
+    "label": "5",
+    "phrase": "Nonbreaking space"
+  },
+  {
+    "decisionId": "japanese",
+    "label": "6",
+    "phrase": "風が水面をゆっくり"
+  },
+  {
+    "decisionId": "closing",
+    "label": "A-1",
+    "phrase": "words stay in place"
+  }
+]

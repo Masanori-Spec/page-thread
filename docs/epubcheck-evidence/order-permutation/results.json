@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checkerVersion": "5.4.0",
+  "case": "Central-directory records reversed independently of physical local-record order. Source remains a valid EPUB; repaired writer retains first physical mimetype and original central order.",
+  "validatorProfile": "Current EPUB 3.4 Candidate Recommendation; no final-standard or reader claim",
+  "files": [
+    {
+      "epub": "input.epub",
+      "epubSha256": "31199a386e7d83d7332692960435000c794746f1e6e4ab42bb93234c295f177e",
+      "report": "input.json",
+      "reportSha256": "f7fe84a2536b41688ca235adea3e8d1792dea557f5454b1c7f70bfe7f16f9726",
+      "fatal": 0,
+      "error": 0,
+      "warning": 0,
+      "usage": 0
+    },
+    {
+      "epub": "output.epub",
+      "epubSha256": "24e8eaf0868aedc92cebb5730477d0b54f793157030b6ad40727d4ce4abc6670",
+      "report": "output.json",
+      "reportSha256": "4bff67de7563730da1abf578e877b731dfeab2ecdc87f78ea29eb0a1da2c7ffa",
+      "fatal": 0,
+      "error": 0,
+      "warning": 0,
+      "usage": 0
+    }
+  ]
+}

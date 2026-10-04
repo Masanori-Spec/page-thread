@@ -1,0 +1,4 @@
+export const VERSION='0.1.0';
+export const LIMITS=Object.freeze({inputBytes:25*1024*1024,outputBytes:25*1024*1024,entryBytes:30*1024*1024,totalBytes:100*1024*1024,entries:2500,ratio:200,pathChars:512,xmlBytes:4*1024*1024,xmlBytesTotal:16*1024*1024,xmlNodes:100000,xmlNodesTotal:200000,textNodes:100000,xmlDepth:80,xmlNameChars:128,xmlAttributes:128,namespaceBindings:128,namespaceUriChars:512,namespaceWorkUnits:4*1024*1024,namespaceWorkUnitsTotal:16*1024*1024,spine:200,boundaries:500,phraseChars:256,labelChars:64,sourceChars:512,idChars:128,textChars:2*1024*1024,blocks:20000,candidatesPerBoundary:200,candidatesTotal:5000,searchWork:100*1024*1024,propertyTextChars:65536,propertyTokens:512,jsonDepth:64,jsonTokens:20000,mappingBytes:1024*1024});
+export class InputError extends Error{constructor(code){super(code);this.name='InputError';this.code=code;}}
+export const fail=code=>{throw new InputError(code);};

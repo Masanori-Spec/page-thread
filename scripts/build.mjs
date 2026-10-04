@@ -1,0 +1,1 @@
+import {mkdir,cp,rm} from 'node:fs/promises';import {writeWorker} from './worker-bundle.mjs';await writeWorker();await rm('dist',{recursive:true,force:true});await mkdir('dist');await cp('public','dist',{recursive:true});await cp('src','dist/src',{recursive:true});console.log('Built static dependency-free runtime');
