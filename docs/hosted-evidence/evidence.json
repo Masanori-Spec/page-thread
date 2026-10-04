@@ -1,0 +1,219 @@
+{
+  "schema": "page-thread-hosted-evidence-v1",
+  "recordedAt": "2026-10-04",
+  "repository": "https://github.com/Masanori-Spec/page-thread",
+  "commit": "11411ee7836a7001735b9db9bfb9117baa2a47d6",
+  "runId": 37195622780,
+  "runUrl": "https://github.com/Masanori-Spec/page-thread/actions/runs/37195622780",
+  "status": "passed",
+  "jobs": {
+    "total": 6,
+    "model": {
+      "jobs": 4,
+      "node": [
+        22,
+        24
+      ],
+      "timezones": [
+        "UTC",
+        "Asia/Tokyo"
+      ],
+      "nodeTestsPerJob": 64
+    },
+    "browser": {
+      "runner": "ubuntu-22.04",
+      "scenarios": 14,
+      "chromiumSandbox": true,
+      "uncaughtErrors": 0
+    },
+    "epubcheck": {
+      "runner": "ubuntu-22.04",
+      "version": "5.4.0",
+      "sourceAndOutput": "zero fatal/error/warning/usage messages",
+      "validatorProfile": "EPUB 3.4 Candidate Recommendation, not a final standard"
+    }
+  },
+  "artifacts": [
+    {
+      "name": "pagethread-browser-evidence",
+      "id": 11301230972,
+      "bytes": 3630451,
+      "sha256": "86a9ef50564b3d455a648793635b939038c77ce4e8a25c818ff8c1f810493a5f"
+    },
+    {
+      "name": "pagethread-epubcheck-evidence",
+      "id": 11301495199,
+      "bytes": 13863,
+      "sha256": "efd06da33499573dc94737824a2f596ff1abdb854b5dcf189bf5f420fc1a0474"
+    }
+  ],
+  "inspection": {
+    "screenshots": [
+      "Japanese desktop",
+      "Japanese 390px viewport",
+      "English preview",
+      "320px and 768px responsive views"
+    ],
+    "reportPdfPages": 4,
+    "skipLinkOverlay": "absent after interaction; focused state also asserted",
+    "reportPdfPixels": "all four pages identical at 100 DPI to the individually inspected preceding successful run",
+    "actualDownloads": "EPUB, mapping, receipt and HTML match independent replay; repeated/restored/offline EPUB bytes identical",
+    "independentOracle": "8 literal intended boundaries, 5 changed XML parts, 4 unchanged members, original XML recovery"
+  },
+  "limitations": [
+    "Evidence is pinned to the specified commit and run; packaging does not rerun hosted CI or prove a later documentation head.",
+    "Reading systems, real mobile hardware, assistive technology and physical printers were not tested.",
+    "Editor-supplied print boundaries and usefulness are not independently established.",
+    "The bounded application profile is narrower than full EPUB validation."
+  ],
+  "files": [
+    {
+      "path": "browser/desktop-ja.png",
+      "bytes": 308520,
+      "sha256": "29df4c9c6f88098086b1f2fd35e7d97669f425be203dc42afa8afd206c65342e"
+    },
+    {
+      "path": "browser/desktop-en-preview.png",
+      "bytes": 602530,
+      "sha256": "09aaa8d48fc166cdbf88cbfcd795b6989388579fb98c7cc4cc868292300c62ce"
+    },
+    {
+      "path": "browser/mobile-ja.png",
+      "bytes": 237242,
+      "sha256": "9d6b03f1eeb15ba445059b29ab0dc3bdbfae1c4966fe00644e5daaf99e3fca59"
+    },
+    {
+      "path": "browser/responsive-320.png",
+      "bytes": 483750,
+      "sha256": "28b0db7a9d8895670cdbcaed4eb78ed744400ed1a86cbf5a2b56bdf07fab6d1b"
+    },
+    {
+      "path": "browser/responsive-768.png",
+      "bytes": 573653,
+      "sha256": "f2160db2e0b87c6fb89ca241111a1afd3fbe83e932db3bac54ba2401248d6000"
+    },
+    {
+      "path": "browser/paginated.epub",
+      "bytes": 7512,
+      "sha256": "fc3599f09ce46cf4116bed104914c50b6516a29fb6f5d962937d36f4e27c4e26"
+    },
+    {
+      "path": "browser/mapping.json",
+      "bytes": 1638,
+      "sha256": "d8ee6732efec6cf36721186adc996679daa4357227238b58b22ea7ff43007caa"
+    },
+    {
+      "path": "browser/receipt.json",
+      "bytes": 7899,
+      "sha256": "a30a9338132d11c31a49ea5d5c82432b13ddb8642d1fdf8ecb421107456c3de7"
+    },
+    {
+      "path": "browser/review.html",
+      "bytes": 8652,
+      "sha256": "aec0483931c3016c0f743465e9d06d1c7b6bd7d89eb5278b56f80a068cbe5e91"
+    },
+    {
+      "path": "browser/review.pdf",
+      "bytes": 233458,
+      "sha256": "84744388ea3a16027717066a56ccf346505fc71c041c58cf14318947bb4838a3"
+    },
+    {
+      "path": "browser/results.json",
+      "bytes": 1406,
+      "sha256": "05c77419b093f98fc320689a20f47525f4d878462fb01bbce712f5e9af9469f7"
+    },
+    {
+      "path": "epubcheck/source.json",
+      "bytes": 6268,
+      "sha256": "fcdbd47d8b41bd09fb21362f6f2eef42f07850e68454f78bab69dd10211c9e2d"
+    },
+    {
+      "path": "epubcheck/output.json",
+      "bytes": 6591,
+      "sha256": "a5a88e54b0896c856d5fd39aa365c0e979bc442ada1c7973e444f900d3d16235"
+    },
+    {
+      "path": "epubcheck/results.json",
+      "bytes": 1361,
+      "sha256": "12638c56585d7456976860cc6a3b955a07de0d62ac2c20130e1a1ef10849bcde"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "path": ".github/workflows/verify.yml",
+      "sha256": "f72199eda8d81aead1f7b24d43eb4c206b061d504b4453bf44bc0dcb10a9f4bc"
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "839d4f83f9e61f1413b600a6334d940c05b4317195a779242553698ca4befe72"
+    },
+    {
+      "path": "public/style.css",
+      "sha256": "f3de6a52ff62c5bedd98be986275b4e96456080a46f8aa4b77c87587d5ede3d0"
+    },
+    {
+      "path": "src/app.mjs",
+      "sha256": "1ebfe293ffb2bc2155d849ab9a2794a7c2efe861a0c2f4578ee5efaf68bf1d59"
+    },
+    {
+      "path": "src/core.mjs",
+      "sha256": "a486ae97ddec9f04d1c96320b65be3583f9d140da72258075d385f4ace0cc6b0"
+    },
+    {
+      "path": "src/demo-data.mjs",
+      "sha256": "ab3863e52e8226b73a174cf25bae21f960925726a177eb9d687ec5316cb0db96"
+    },
+    {
+      "path": "src/i18n.mjs",
+      "sha256": "bc7cfd2f16a35480fd9c2456639c530f805fd85d0edbb16c1b0d2a7d121e467f"
+    },
+    {
+      "path": "src/json.mjs",
+      "sha256": "59c5cfe9460ed37ee091d7eeeb3ba69120ad1626bbc92403d8fcb4da357179b2"
+    },
+    {
+      "path": "src/limits.mjs",
+      "sha256": "cd4555f6768f563c7f29bad8672a18fb77b004f73b427212fc0457dbb97fe690"
+    },
+    {
+      "path": "src/report.mjs",
+      "sha256": "cebf9f0a5a5ae614414729951fafbbd94c35dc7b43eb7e0e2388132f496da6cb"
+    },
+    {
+      "path": "src/worker-source.mjs",
+      "sha256": "23cde74736dfaeac1a62073c48e3315875c2c7518100ca3596b9c3b4fef77ae8"
+    },
+    {
+      "path": "src/worker.mjs",
+      "sha256": "3270fc383a796671fe9ff813e0565affe4a08f3b1802ead9b7556fe5915e5f84"
+    },
+    {
+      "path": "src/xml.mjs",
+      "sha256": "9a8c80928ed871f19cd82df6cce24f1e062be5d89dd0a536afc9d70965eaec89"
+    },
+    {
+      "path": "src/zip.mjs",
+      "sha256": "e04327b8ea8b080df310bd6557575ee53d3ba13f3b87c531c2e3ca8a4898b968"
+    },
+    {
+      "path": "tests/browser/browser-test.mjs",
+      "sha256": "941ad9ddba255fb01ce0300453126bd308fcbc6ffd34c5bedb7618bf15d46df4"
+    },
+    {
+      "path": "tests/browser/worker-gate.mjs",
+      "sha256": "6cbd9e5a8296272d0410e6d472be68722f1c685ea63d32be750f44cc02912263"
+    },
+    {
+      "path": "tests/fixtures/expected-selection.json",
+      "sha256": "3cee677172c5491fb47d504e7a992a054784ffbf26967f739cdea665cb508616"
+    },
+    {
+      "path": "tests/fixtures/field-notes.epub",
+      "sha256": "8600894b09e9da1c0bf671ba42b37b4f6e565e15fa435b9ab0dbd1e3fc507d27"
+    },
+    {
+      "path": "tests/oracle.py",
+      "sha256": "da11cd0f571d38932f87596e0ea6722a12ac5c8cdc601541976cb0679d120b87"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "chromiumSandbox": true,
+  "checks": [
+    "Japanese entry, keyboard skip and original three-document demo load",
+    "English candidate review exposes four repeats and requires explicit choices",
+    "four actual downloads match the engine and independent intended-selection oracle",
+    "repeated export is byte-identical and source/choice edits invalidate downloads",
+    "saved mapping restores all choices after reset/reimport and repeated same-file restore",
+    "stale mapping, duplicate keys, reverse order and malformed UTF-8 reject without replacing the book",
+    "missing quotes stay unresolved and single candidates are never chosen automatically",
+    "malformed and already-paginated replacement imports preserve the last good book",
+    "cancel, oversized replacement and reset block real stale worker responses deterministically",
+    "offline-after-load import, saved decisions and export require no network",
+    "hostile source labels and metadata are escaped and no imported resource is rendered",
+    "language switches retain confirmed choices and narrow layouts remain usable",
+    "actual standalone report prints with hashes, source and limitations visible",
+    "reloading clears private state and there are no duplicate IDs or uncaught errors"
+  ],
+  "uncaughtErrors": [],
+  "readingSystemTested": false,
+  "editorialBoundaryCorrectnessTested": false
+}

@@ -1,6 +1,6 @@
 # Verification record
 
-2026-10-04 UTC · PageThread 0.1.0 · Local source-review stage. No browser, hosted CI, native reading-system or publication run has occurred.
+2026-10-04 UTC · PageThread 0.1.0 · Hosted evidence pinned to commit `11411ee7836a7001735b9db9bfb9117baa2a47d6`, [run 37195622780](https://github.com/Masanori-Spec/page-thread/actions/runs/37195622780). All six jobs passed. Later documentation/package commits require their own external exact-head audit.
 
 ## Passed
 
@@ -21,17 +21,22 @@ The independent review additionally verifies 24 entity/Unicode/inline/comment ca
 
 The reviewer also reversed and rotated only central-directory order in an otherwise unchanged ZIP. Export preserves the original physical order (mimetype first) and central order separately. Both the reversed-directory input and its repaired output independently pass official EPUBCheck 5.4.0 with zero messages; [focused source/output files and reports](epubcheck-evidence/order-permutation/results.json) are retained.
 
-## Authored, not run
+## Hosted browser and visual verification
 
-Fourteen Chromium scenarios cover entry/keyboard skip, JA/EN desktop/mobile views, repeated-candidate choices, actual four-file downloads, exact independent oracle, repeated export, invalidation, saved mapping restore, stale/malformed/reversed mappings, missing phrases, malformed/already-paginated replacement, cancellation/oversized/reset with held real worker callbacks, offline-after-load export, escaped hostile metadata, narrow widths, standalone report printing and cleared reload state.
+All **14 Chromium scenarios passed**: entry/keyboard skip, JA/EN desktop/mobile views, repeated-candidate choices, actual four-file downloads, exact independent oracle, repeated export, invalidation, saved mapping restore, stale/malformed/reversed mappings, missing phrases, malformed/already-paginated replacement, cancellation/oversized/reset with held real worker callbacks, offline-after-load export, escaped hostile metadata, narrow widths, standalone report printing and cleared reload state. The run recorded no uncaught errors. Chromium launched with its sandbox enabled on ubuntu-22.04; no local browser restriction was bypassed.
 
-The hosted workflow has four Node 22/24 × UTC/Asia/Tokyo model jobs, sandbox-enabled Chromium on ubuntu-22.04 and official EPUBCheck on ubuntu-22.04. Its release download is SHA-256 pinned. No hosted job is claimed as passed. No local browser restriction was bypassed.
+The other five hosted jobs passed: Node 22/24 × UTC/Asia/Tokyo, each with 64 tests and zero failures/skips plus the Python suites; and official EPUBCheck 5.4.0 on ubuntu-22.04. The validator release download is SHA-256 pinned. The [hosted raw source/output reports](hosted-evidence/epubcheck/results.json) have empty message lists and zero fatal/error/warning/usage counts, bound to the source and actual output hashes above.
+
+Actual browser EPUB, mapping JSON, receipt JSON and HTML report match module replay. Repeated, restored and offline EPUB exports match byte-for-byte. The independent Python oracle separately verifies the downloaded artifacts against all eight literal intended locations. These are original synthetic fixtures; no customer material was used.
+
+Visual inspection covered Japanese desktop and 390px mobile, English confirmed preview, 320px and 768px responsive screenshots, and every page of the four-page PDF. The 1440/768/390/320px browser checks report no horizontal overflow. The focused skip link remains keyboard-visible and is clipped/transparent after focus moves. All four final PDF pages match the individually inspected preceding clean run at 100 DPI. This verifies these browser-generated pages, not an EPUB reading system or physical printer.
+
+The [evidence manifest](hosted-evidence/evidence.json) records the exact run, commit, artifact IDs/archive hashes, selected member hashes and tested runtime source hashes. `npm run test:evidence` rechecks those bindings and replays actual exports through both the module and Python oracle. It does not rerun hosted CI, prove a future head passed, or automatically repeat human visual inspection. The [dated addendum](HOSTED_REVIEW_ADDENDUM.md) preserves the original independent review and records subsequent browser repairs.
 
 ## Remaining gates and limits
 
-1. Final source/archive reconciliation after the completed independent review
-2. Authorized exact-commit hosted checks and inspection of actual screenshots, downloads and print PDFs
-3. Reading-system tests, real mobile hardware, assistive technology, printers and a permission-cleared multi-editor corpus
-4. Editorial checks against the actual print edition and usefulness interviews
+1. External exact-head CI and source/archive reconciliation for later documentation/package commits
+2. Other browser engines, reading systems, real mobile hardware, assistive technology, physical printers and a permission-cleared multi-editor corpus
+3. Editorial checks against the actual print edition and usefulness interviews
 
-No browser/reader pixel result, editorial page-boundary correctness, full input validation, malware-safety guarantee, overall accessibility conformance or universal compatibility is claimed. The application does not run EPUBCheck on user imports; its bounded eligibility checks are narrower than that validator.
+No reading-system pixel result, editorial page-boundary correctness, full input validation, malware-safety guarantee, overall accessibility conformance or universal compatibility is claimed. The application does not run EPUBCheck on user imports; its bounded eligibility checks are narrower than that validator.

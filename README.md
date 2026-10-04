@@ -54,7 +54,7 @@ Additional XML depth, name, attribute, namespace and text-node caps are in [limi
 
 ## Verification status
 
-Passed locally:
+Passed locally and in the [six-job hosted run](https://github.com/Masanori-Spec/page-thread/actions/runs/37195622780) at commit `11411ee7836a7001735b9db9bfb9117baa2a47d6`:
 
 - **64 Node tests**, including model/security cases, nine actual UI-handler regressions and 14 independent reviewer cases
 - Independent Python ZIP/XML verifier: all eight hand-authored boundary identities, five changed XML parts, four byte-identical untouched members and exact exported mapping hash
@@ -62,10 +62,19 @@ Passed locally:
 - **33 adversarial mutations rejected after refreshing hashes**, plus a harmless XML-reserialization positive
 - Official **EPUBCheck 5.4.0** on both source and output: zero fatal/error/warning/usage messages
 - Syntax, static build and runtime network/storage primitive guards
+- **14 sandbox-enabled Chromium scenarios**: explicit choices, keyboard skip/radio operation, actual downloads, repeat/replay, invalid imports, stale-worker cancellation/reset, offline-after-load export and cleared reload state
+- JA desktop and 390px mobile views, EN preview, 320/768/1440px layouts and all four printed report pages inspected; no horizontal overflow or unfocused skip-link overlay
+- Actual browser EPUB, mapping, receipt and HTML match module replay and the independent Python oracle; repeated, restored and offline EPUB exports are byte-identical
 
-[Verification record](docs/VERIFICATION.md) · [Independent oracle](docs/ORACLE.md) · [Official validator evidence](docs/epubcheck-evidence/results.json)
+[Verification record](docs/VERIFICATION.md) · [Independent oracle](docs/ORACLE.md) · [Pinned hosted evidence](docs/hosted-evidence/evidence.json) · [Hosted validator reports](docs/hosted-evidence/epubcheck/results.json)
 
-Fourteen sandbox-enabled Chromium scenarios and the six-job hosted CI workflow are authored but unrun. Local browser launch is known restricted and was not attempted or bypassed. Browser pixels, print layout, real readers/devices and formal accessibility remain unverified. The [independent functional review](docs/INDEPENDENT_REVIEW.md) includes 24 separate Python restoration cases, a real worker-thread round trip, the 500-boundary maximum and repaired malformed-input cases.
+![PageThread Japanese desktop workbench](docs/hosted-evidence/browser/desktop-ja.png)
+
+[Japanese mobile view](docs/hosted-evidence/browser/mobile-ja.png) · [English confirmed preview](docs/hosted-evidence/browser/desktop-en-preview.png) · [Four-page review PDF](docs/hosted-evidence/browser/review.pdf) · [Actual exported EPUB](docs/hosted-evidence/browser/paginated.epub)
+
+Evidence is pinned to the commit and run above. A later documentation commit needs its own external CI audit; `npm run package` rechecks retained hashes and replays exports, and does not rerun hosted jobs. Local browser restrictions were not bypassed. Reading systems, other browser engines, real mobile hardware, assistive technology, physical printers and overall accessibility remain unverified. The [original independent functional review](docs/INDEPENDENT_REVIEW.md) stays unchanged; the [dated hosted review addendum](docs/HOSTED_REVIEW_ADDENDUM.md) records the later checks and repairs.
+
+64件の自動テスト、独立したXML保存検証、14件のブラウザ操作、実際のダウンロードと4ページの印刷PDFを確認済みです。確認結果は上記コミットに結び付けています。実際のEPUBリーダー、実機のスマートフォン、支援技術、編集者が指定した紙版の境界の正しさは未検証です。
 
 The implementation profile uses EPUB 3.3 structure plus current W3C pagination-source guidance. EPUBCheck 5.4.0 reports its current EPUB 3.4 Candidate Recommendation profile; this is **not a final EPUB 3.4 conformance claim**. Neither the validator nor the preservation oracle can establish that the editor supplied the correct print-edition boundaries. No universal reader, overall accessibility, demand or novelty claim is made.
 
@@ -93,6 +102,7 @@ Pinned official release archive SHA-256: `33350c61038e71dfb3d45a76aed04bf5481e6d
 
 ```sh
 npm run test:browser  # requires the running local server and sandboxed Chromium
+npm run test:evidence # checks retained run hashes and replays its actual exports
 npm run package      # runs local checks and freezes source/manifest; does not run hosted CI
 ```
 

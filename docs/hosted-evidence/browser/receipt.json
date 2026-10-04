@@ -1,0 +1,265 @@
+{
+  "schema": "page-thread-receipt-v1",
+  "engineVersion": "0.1.0",
+  "profile": "EPUB 3.3 reflowable XHTML; current W3C pagination-source guidance; not final EPUB 3.4 conformance",
+  "inputSha256": "8600894b09e9da1c0bf671ba42b37b4f6e565e15fa435b9ab0dbd1e3fc507d27",
+  "outputSha256": "fc3599f09ce46cf4116bed104914c50b6516a29fb6f5d962937d36f4e27c4e26",
+  "mappingSha256": "d8ee6732efec6cf36721186adc996679daa4357227238b58b22ea7ff43007caa",
+  "packagePart": "EPUB/package.opf",
+  "navPart": "EPUB/nav.xhtml",
+  "paginationSource": "PageThread Field Notes, synthetic editorial edition, 2026; page labels supplied for demonstration",
+  "modified": {
+    "sourcePath": [
+      0,
+      4
+    ],
+    "before": "2026-01-01T00:00:00Z",
+    "after": "2026-10-04T00:00:00Z"
+  },
+  "boundaries": [
+    {
+      "decisionId": "prelim",
+      "label": "iv",
+      "phrase": "Field notes begin",
+      "sourcePart": "EPUB/text/zz-preface.xhtml",
+      "sourcePartSha256": "2351b76a037101181248f62be9e0defce14070045fc18935f758a6e148a8d680",
+      "spineIdref": "intro",
+      "sourcePath": [
+        1,
+        1
+      ],
+      "textNodeIndex": 0,
+      "offset": 0,
+      "markerId": "pt-page-0001",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "trail",
+      "label": "1",
+      "phrase": "quiet attention and a deliberate",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "sourcePartSha256": "f44f3a051565e5266249019f6a0942943a9f7e88688261fff4a5b0cc17b57094",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        1,
+        0
+      ],
+      "textNodeIndex": 0,
+      "offset": 0,
+      "markerId": "pt-page-0002",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "repeat",
+      "label": "2",
+      "phrase": "A shared beginning",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "sourcePartSha256": "f44f3a051565e5266249019f6a0942943a9f7e88688261fff4a5b0cc17b57094",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        2
+      ],
+      "textNodeIndex": 0,
+      "offset": 31,
+      "markerId": "pt-page-0003",
+      "candidateCount": 4,
+      "selectedOccurrence": 3
+    },
+    {
+      "decisionId": "entity",
+      "label": "3",
+      "phrase": "ampersand & a bold step",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "sourcePartSha256": "f44f3a051565e5266249019f6a0942943a9f7e88688261fff4a5b0cc17b57094",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        3
+      ],
+      "textNodeIndex": 0,
+      "offset": 3,
+      "markerId": "pt-page-0004",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "unicode",
+      "label": "4",
+      "phrase": "and café",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "sourcePartSha256": "f44f3a051565e5266249019f6a0942943a9f7e88688261fff4a5b0cc17b57094",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        4
+      ],
+      "textNodeIndex": 0,
+      "offset": 8,
+      "markerId": "pt-page-0005",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "spaces",
+      "label": "5",
+      "phrase": "Nonbreaking space",
+      "sourcePart": "EPUB/text/mm-trail.xhtml",
+      "sourcePartSha256": "f44f3a051565e5266249019f6a0942943a9f7e88688261fff4a5b0cc17b57094",
+      "spineIdref": "trail",
+      "sourcePath": [
+        1,
+        5
+      ],
+      "textNodeIndex": 0,
+      "offset": 0,
+      "markerId": "pt-page-0006",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "japanese",
+      "label": "6",
+      "phrase": "風が水面をゆっくり",
+      "sourcePart": "EPUB/text/aa-river.xhtml",
+      "sourcePartSha256": "101e61495e70b1cfb2efeb49c01a9b5aad4c5a7919026ba7bc5627880bb6348e",
+      "spineIdref": "river",
+      "sourcePath": [
+        1,
+        1
+      ],
+      "textNodeIndex": 0,
+      "offset": 7,
+      "markerId": "pt-page-0007",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    },
+    {
+      "decisionId": "closing",
+      "label": "A-1",
+      "phrase": "words stay in place",
+      "sourcePart": "EPUB/text/aa-river.xhtml",
+      "sourcePartSha256": "101e61495e70b1cfb2efeb49c01a9b5aad4c5a7919026ba7bc5627880bb6348e",
+      "spineIdref": "river",
+      "sourcePath": [
+        1,
+        3
+      ],
+      "textNodeIndex": 1,
+      "offset": 0,
+      "markerId": "pt-page-0008",
+      "candidateCount": 1,
+      "selectedOccurrence": 1
+    }
+  ],
+  "additions": {
+    "pageListId": "pt-page-list",
+    "pageListLabel": "Pages / ページ",
+    "metadata": [
+      {
+        "property": "pageBreakSource",
+        "value": "PageThread Field Notes, synthetic editorial edition, 2026; page labels supplied for demonstration"
+      },
+      {
+        "property": "schema:accessibilityFeature",
+        "value": "pageBreakMarkers"
+      },
+      {
+        "property": "schema:accessibilityFeature",
+        "value": "pageNavigation"
+      }
+    ]
+  },
+  "changedParts": [
+    {
+      "part": "EPUB/package.opf",
+      "beforeSha256": "8d0c6565c709501ff815563f3529b2063079ae8641d41b928ee223ded36c404a",
+      "afterSha256": "c7e554c6674609afad68e7c004196eb969ef03083683e4bc1323b65c6e7f611f"
+    },
+    {
+      "part": "EPUB/nav.xhtml",
+      "beforeSha256": "5c500ac246dc843dcd2c5c6bebaced0277b83ef458c3ae52c7bf16b5a423bc4a",
+      "afterSha256": "bf8f5e72f1fdf0ed07a0fba70e70bf353570ea6220e412115f6269ac8b87f647"
+    },
+    {
+      "part": "EPUB/text/zz-preface.xhtml",
+      "beforeSha256": "2351b76a037101181248f62be9e0defce14070045fc18935f758a6e148a8d680",
+      "afterSha256": "406f7379a71b9404947248e40cf9df56a7abe7c14e99926ed4230c9991fa812f"
+    },
+    {
+      "part": "EPUB/text/mm-trail.xhtml",
+      "beforeSha256": "f44f3a051565e5266249019f6a0942943a9f7e88688261fff4a5b0cc17b57094",
+      "afterSha256": "3d1c40fd65804bf6a90216c38d55df0c26d0744e67468e02a9f49772f961c4d2"
+    },
+    {
+      "part": "EPUB/text/aa-river.xhtml",
+      "beforeSha256": "101e61495e70b1cfb2efeb49c01a9b5aad4c5a7919026ba7bc5627880bb6348e",
+      "afterSha256": "ffaafcab8e67fc449588cfdc11b33ecd38fab53f4caa6b4f859ff1232b8696be"
+    }
+  ],
+  "unchangedParts": [
+    {
+      "part": "mimetype",
+      "sha256": "e468e350d1143eb648f60c7b0bd6031101ec0544a361ca74ecef256ac901f48b"
+    },
+    {
+      "part": "META-INF/container.xml",
+      "sha256": "698302a3e6fc12f88104bbe9028f5acd4f8a3f88638ea20ec23ffa231201af25"
+    },
+    {
+      "part": "EPUB/styles/book.css",
+      "sha256": "8f2f601d372d5cc7e205874cb95730ad4b435ac9678642e61fb431d491e95459"
+    },
+    {
+      "part": "EPUB/images/river.svg",
+      "sha256": "d4d919c074c2b891e5d577d4f687c6a3217c4b28cd1b7d75328c79cc2a3ed499"
+    }
+  ],
+  "limits": {
+    "inputBytes": 26214400,
+    "outputBytes": 26214400,
+    "entryBytes": 31457280,
+    "totalBytes": 104857600,
+    "entries": 2500,
+    "ratio": 200,
+    "pathChars": 512,
+    "xmlBytes": 4194304,
+    "xmlBytesTotal": 16777216,
+    "xmlNodes": 100000,
+    "xmlNodesTotal": 200000,
+    "textNodes": 100000,
+    "xmlDepth": 80,
+    "xmlNameChars": 128,
+    "xmlAttributes": 128,
+    "namespaceBindings": 128,
+    "namespaceUriChars": 512,
+    "namespaceWorkUnits": 4194304,
+    "namespaceWorkUnitsTotal": 16777216,
+    "spine": 200,
+    "boundaries": 500,
+    "phraseChars": 256,
+    "labelChars": 64,
+    "sourceChars": 512,
+    "idChars": 128,
+    "textChars": 2097152,
+    "blocks": 20000,
+    "candidatesPerBoundary": 200,
+    "candidatesTotal": 5000,
+    "searchWork": 104857600,
+    "propertyTextChars": 65536,
+    "propertyTokens": 512,
+    "jsonDepth": 64,
+    "jsonTokens": 20000,
+    "mappingBytes": 1048576
+  },
+  "verification": {
+    "reopened": true,
+    "unaffectedEntriesByteIdentical": true,
+    "editorialBoundaryCorrectness": false,
+    "universalReaderCompatibility": false,
+    "overallAccessibilityConformance": false
+  }
+}
